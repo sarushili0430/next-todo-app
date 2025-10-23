@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.19.5",
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.76.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "hono": "^4.10.2",

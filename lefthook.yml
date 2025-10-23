@@ -1,0 +1,8 @@
+pre-commit:
+  commands:
+    format:
+      glob: "src/**/*.{ts,tsx}"
+      run: pnpm run typecheck
+    lint:
+      glob: "src/**/*.{ts,tsx}"
+      run: pnpm run format

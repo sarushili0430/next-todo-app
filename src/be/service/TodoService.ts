@@ -15,6 +15,11 @@ class SupabaseError extends ErrorFactory({
   message: "An error occurred with Supabase operations.",
 }) {}
 
+class UnexpectedError extends ErrorFactory({
+    name: "UnexpectedError",
+    message: "An unexpected error occurred.",
+}) {}
+
 export const TodoService = {
   getTodos(): ResultAsync<Array<Todo>, SupabaseError> {
     return ResultAsync.fromPromise(
@@ -22,7 +27,7 @@ export const TodoService = {
         const supabase = await createClient()
         const { data } = await supabase.from("todo").select("*")
         if (data === null) {
-          throw new SupabaseError()
+          throw new UnexpectedError()
         }
         return data
       })(),

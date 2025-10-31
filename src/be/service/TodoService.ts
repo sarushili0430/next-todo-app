@@ -16,8 +16,8 @@ class SupabaseError extends ErrorFactory({
 }) {}
 
 class UnexpectedError extends ErrorFactory({
-    name: "UnexpectedError",
-    message: "An unexpected error occurred.",
+  name: "UnexpectedError",
+  message: "An unexpected error occurred.",
 }) {}
 
 export const TodoService = {

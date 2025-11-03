@@ -3,6 +3,7 @@ pre-commit:
     format:
       glob: "src/**/*.{ts,tsx}"
       run: pnpm run format
+      stage_fixed: true
     lint:
       glob: "src/**/*.{ts,tsx}"
       run: pnpm run typecheck

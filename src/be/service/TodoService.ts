@@ -37,7 +37,7 @@ export const TodoService = {
   },
   createTodo(
     title: string,
-    dueDate?: Date,
+    dueDate?: string,
     description?: string,
   ): ResultAsync<Todo, SupabaseError> {
     return ResultAsync.fromPromise(
@@ -47,7 +47,7 @@ export const TodoService = {
           .from("todo")
           .insert({
             title: title,
-            due_date: dueDate?.toISOString(),
+            due_date: dueDate,
             description: description,
           })
           .select()

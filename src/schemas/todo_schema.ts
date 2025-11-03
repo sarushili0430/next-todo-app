@@ -6,7 +6,6 @@ export const todoSchema = z
     dueDate: z.iso.date().optional(),
     description: z.string().optional(),
   })
-
   .refine((data) => {
     return data?.dueDate ? new Date(data?.dueDate) > new Date() : true
   })

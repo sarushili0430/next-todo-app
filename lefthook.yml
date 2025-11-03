@@ -2,7 +2,7 @@ pre-commit:
   commands:
     format:
       glob: "src/**/*.{ts,tsx}"
-      run: pnpm run typecheck
+      run: pnpm run format
     lint:
       glob: "src/**/*.{ts,tsx}"
-      run: pnpm run format
+      run: pnpm run typecheck

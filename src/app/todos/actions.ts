@@ -11,5 +11,8 @@ export async function fetchTodos(): Promise<Todo[] | FetchError> {
   }
 
   const { todos } = await result.json()
-  return todos as Todo[]
+  return todos.map((todo) => ({
+    ...todo,
+    dueDate: todo.dueDate ? new Date(todo.dueDate) : undefined,
+  })) as Todo[]
 }

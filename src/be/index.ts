@@ -3,6 +3,7 @@ import { zValidator } from "@hono/zod-validator"
 import { TodoService } from "./service/TodoService"
 import { HTTPException } from "hono/http-exception"
 import { todoSchema } from "@/schemas/todo_schema"
+import { ok } from "neverthrow"
 
 const app = new Hono().basePath("/api")
 
@@ -19,9 +20,12 @@ export const route = app
         message: "Failed to fetch todos",
       })
     }
-    return c.json({
-      todos: todos,
-    })
+    return c.json(
+      {
+        todos: todos.value,
+      },
+      200,
+    )
   })
   .post("/todo/create", zValidator("json", todoSchema), async (c) => {
     const { title, dueDate, description } = c.req.valid("json")
@@ -31,7 +35,12 @@ export const route = app
         message: "Failed to create todo",
       })
     }
-    return c.json({
-      todos: todo,
-    })
+    return c.json(
+      {
+        todo: todo.value,
+      },
+      200,
+    )
   })
+
+export type AppType = typeof route

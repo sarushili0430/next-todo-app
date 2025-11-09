@@ -2,8 +2,7 @@ import { Hono } from "hono"
 import { zValidator } from "@hono/zod-validator"
 import { TodoService } from "./service/TodoService"
 import { HTTPException } from "hono/http-exception"
-import { todoSchema } from "@/schemas/todo_schema"
-import { ok } from "neverthrow"
+import { todoSchema } from "@/schemas/todoSchema"
 
 const app = new Hono().basePath("/api")
 

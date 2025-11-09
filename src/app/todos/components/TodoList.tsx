@@ -12,6 +12,7 @@ import { ChevronDown, ChevronRight } from "lucide-react"
 
 interface TodoListProps {
   todos: Todo[]
+  setTodoList: (todos: Todo[]) => void
 }
 
 export function TodoList({ todos }: TodoListProps) {

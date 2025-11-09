@@ -1,6 +1,6 @@
 "use client"
 
-import { TodoList } from "@/app/todos/components/TodoList"
+import { TodoList } from "@/app/tasks/components/TodoList"
 import { FetchError, isFetchError } from "../../lib/clientError"
 import { Todo } from "@/types/todo"
 import { CreateTodoDialog } from "./components/CreateTodoDialog"

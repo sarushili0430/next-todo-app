@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Todo } from "@/types/todo"
-import { TodoCard } from "@/app/todos/components/TodoCard"
+import { TodoCard } from "@/app/tasks/components/TodoCard"
 import {
   Collapsible,
   CollapsibleContent,
